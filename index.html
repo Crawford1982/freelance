@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Freelance Hourly Rate Calculator | The Ultimate Guide to Pricing
+    </title>
+    <meta
+      name="description"
+      content="Calculate your perfect freelance hourly rate with our free tool. Includes a 1,000-word guide on business expenses, billable hours, and pricing strategies for freelancers."
+    />
+    <meta
+      name="keywords"
+      content="freelance rate calculator, hourly rate calculator, freelance pricing guide, freelance business expenses, billable hours calculator, free no login freelance rate calculator, calculate hourly rate from annual salary goal, freelance rate calculator for digital marketers, freelance rate calculator for web developers, how to raise freelance rates, hourly vs project based pricing"
+    />
+    <link rel="canonical" href="https://freelanceratecalculator.net/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://freelanceratecalculator.net/" />
+    <meta
+      property="og:title"
+      content="Freelance Hourly Rate Calculator | Find Your Worth"
+    />
+    <meta
+      property="og:description"
+      content="Stop guessing your rates. Use our data-driven calculator to find the perfect hourly rate for your freelance business."
+    />
+    <meta
+      property="og:image"
+      content="https://freelanceratecalculator.net/og-image.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://freelanceratecalculator.net/" />
+    <meta
+      property="twitter:title"
+      content="Freelance Hourly Rate Calculator | Find Your Worth"
+    />
+    <meta
+      property="twitter:description"
+      content="Stop guessing your rates. Use our data-driven calculator to find the perfect hourly rate for your freelance business."
+    />
+    <meta
+      property="twitter:image"
+      content="https://freelanceratecalculator.net/og-image.png"
+    />
+
+    <!-- JSON-LD Schema Markup for SoftwareApplication -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Freelance Hourly Rate Calculator",
+        "operatingSystem": "Web",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A comprehensive tool for freelancers to calculate their ideal hourly rate based on salary goals, expenses, and billable time."
+      }
+    </script>
+
+    <!-- JSON-LD Schema Markup for FAQ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I calculate my freelance hourly rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To calculate your freelance hourly rate, add your desired annual salary to your annual business expenses, then divide that total by your total annual billable hours."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are typical freelance business expenses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Typical expenses include software subscriptions, hardware, health insurance, marketing costs, and self-employment taxes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I charge per hour or per project?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Both have pros and cons. Hourly is safer for open-ended work, while project-based can be more profitable if you are highly efficient. Use your hourly rate as the foundation for both."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (UMD build for createIcons in browser) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "Inter",
+                "ui-sans-serif",
+                "system-ui",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica Neue",
+                "Arial",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      /* Custom print styles */
+      @media print {
+        .print-hidden {
+          display: none !important;
+        }
+        .print-block {
+          display: block !important;
+        }
+        body {
+          background: white !important;
+          color: black !important;
+        }
+        .shadow-lg,
+        .shadow-sm {
+          box-shadow: none !important;
+          border: 1px solid #eee !important;
+        }
+      }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HETLWKEDV0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HETLWKEDV0');
+    </script>
+  </head>
+
+  <body
+    class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200 font-sans min-h-screen"
+  >
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-sm print-hidden">
+      <div
+        class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div
+          class="flex items-center space-x-2 text-indigo-600 dark:text-indigo-400"
+        >
+          <i data-lucide="calculator" class="w-6 h-6"></i>
+          <h1 class="text-xl font-bold">Freelance Rate Calculator</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Toggle Dark Mode"
+          >
+            <i id="theme-icon-sun" data-lucide="sun" class="w-5 h-5 hidden"></i>
+            <i id="theme-icon-moon" data-lucide="moon" class="w-5 h-5"></i>
+          </button>
+          <button
+            onclick="window.print()"
+            class="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+          >
+            <i data-lucide="printer" class="w-4 h-4"></i>
+            <span>Print Report</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      <!-- Hero: differentiator vs spreadsheet/download competitors -->
+      <p class="text-center text-gray-600 dark:text-gray-400 text-sm mb-6 print-hidden">
+        No download, no signup. Calculate instantly — your data never leaves your browser.
+      </p>
+
+      <!-- Print Header -->
+      <div class="hidden print:block mb-8">
+        <h1 class="text-3xl font-bold text-gray-900">Freelance Rate Report</h1>
+        <p class="text-gray-500 mt-2" id="print-date"></p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Inputs Section -->
+        <div
+          class="md:col-span-2 space-y-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700"
+        >
+          <h2 class="text-lg font-semibold mb-4 flex items-center">
+            <i data-lucide="briefcase" class="w-5 h-5 mr-2 text-indigo-500"></i>
+            Your Goals & Expenses
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Annual Salary -->
+            <div class="space-y-2">
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Desired Annual Salary</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <i
+                    data-lucide="dollar-sign"
+                    class="h-5 w-5 text-gray-400"
+                  ></i>
+                </div>
+                <input
+                  type="number"
+                  id="annualSalary"
+                  value="80000"
+                  min="0"
+                  step="1000"
+                  class="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Annual Expenses -->
+            <div class="space-y-2">
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Business Expenses (Annual)</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <i
+                    data-lucide="dollar-sign"
+                    class="h-5 w-5 text-gray-400"
+                  ></i>
+                </div>
+                <input
+                  type="number"
+                  id="annualExpenses"
+                  value="10000"
+                  min="0"
+                  step="500"
+                  class="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Weekly Hours -->
+            <div class="space-y-2">
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Billable Hours per Week</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <i data-lucide="clock" class="h-5 w-5 text-gray-400"></i>
+                </div>
+                <input
+                  type="number"
+                  id="weeklyHours"
+                  value="25"
+                  min="1"
+                  max="168"
+                  step="0.5"
+                  class="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Vacation Weeks -->
+            <div class="space-y-2">
+              <label
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                >Weeks Off per Year</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                >
+                  <i data-lucide="clock" class="h-5 w-5 text-gray-400"></i>
+                </div>
+                <input
+                  type="number"
+                  id="vacationWeeks"
+                  value="4"
+                  min="0"
+                  max="52"
+                  step="1"
+                  class="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="md:col-span-1">
+          <div
+            class="bg-indigo-600 dark:bg-indigo-700 rounded-2xl p-6 text-white shadow-lg sticky top-8"
+          >
+            <h2 class="text-indigo-100 font-medium mb-2">Target Hourly Rate</h2>
+            <div class="text-5xl font-bold mb-2">
+              $<span id="hourlyRateResult">0.00</span
+              ><span class="text-xl font-normal text-indigo-200">/hr</span>
+            </div>
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-indigo-200 text-sm mb-4">
+              <span>Day rate: $<span id="dailyRateResult">0</span></span>
+              <span>Week rate: $<span id="weeklyRateResult">0</span></span>
+            </div>
+
+            <div class="space-y-4 pt-6 border-t border-indigo-500/50">
+              <div class="flex justify-between text-sm">
+                <span class="text-indigo-100">Total Revenue Needed</span>
+                <span class="font-semibold" id="totalRevenueResult">$0</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-indigo-100">Total Billable Hours</span>
+                <span class="font-semibold" id="totalHoursResult">0 hrs</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-indigo-100">Weeks Working</span>
+                <span class="font-semibold" id="totalWeeksResult">0 wks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        AdSense: When approved, add your ad code inside each div below.
+        Slots: 1) ad-slot-top (responsive leaderboard/banner), 2) ad-slot-toc (rectangle), 3) ad-slot-mid (in-article).
+        Keep print-hidden so ads don't appear in print.
+      -->
+      <!-- Ad slot 1: below calculator, above guide (AdSense: paste your responsive ad unit here) -->
+      <div id="ad-slot-top" class="my-8 flex justify-center print-hidden min-h-[100px]">
+        <!-- AdSense placeholder: replace with your ad code -->
+      </div>
+
+      <!-- Monetization Section -->
+      <div
+        class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800 print-hidden flex flex-col items-center justify-center"
+      >
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+          Free tool, no signup, no ads. If it helped you:
+        </p>
+        <a href="https://ko-fi.com/X8X71V44OQ" target="_blank" rel="noopener noreferrer" class="inline-block">
+          <img height="36" style="border:0;height:36px;" src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" alt="Buy Me a Coffee at ko-fi.com" />
+        </a>
+      </div>
+
+      <!-- SEO Guide Section -->
+      <article
+        class="mt-20 pt-12 border-t border-gray-200 dark:border-gray-800 print:hidden max-w-3xl mx-auto"
+      >
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-8">
+          The Complete Guide to Setting Your Freelance Hourly Rate
+        </h1>
+
+        <!-- Table of Contents -->
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl mb-10">
+          <h4
+            class="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4"
+          >
+            Table of Contents
+          </h4>
+          <!-- Ad slot 2: in-content (AdSense: optional banner after ToC) -->
+          <div id="ad-slot-toc" class="my-4 flex justify-center print-hidden min-h-[90px]">
+            <!-- AdSense placeholder -->
+          </div>
+          <ul
+            class="space-y-2 text-indigo-600 dark:text-indigo-400 font-medium"
+          >
+            <li>
+              <a href="#trap" class="hover:underline"
+                >1. The "Employee Mindset" Trap</a
+              >
+            </li>
+            <li>
+              <a href="#step1" class="hover:underline"
+                >2. Determine Your Target Annual Salary</a
+              >
+            </li>
+            <li>
+              <a href="#step2" class="hover:underline"
+                >3. Calculate Your True Business Expenses</a
+              >
+            </li>
+            <li>
+              <a href="#step3" class="hover:underline"
+                >4. Be Realistic About Billable Hours</a
+              >
+            </li>
+            <li>
+              <a href="#step4" class="hover:underline">5. Factor in Time Off</a>
+            </li>
+            <li>
+              <a href="#mistakes" class="hover:underline"
+                >6. Common Pricing Mistakes to Avoid</a
+              >
+            </li>
+            <li>
+              <a href="#no-login" class="hover:underline"
+                >7. Free No Login Freelance Rate Calculator</a
+              >
+            </li>
+            <li>
+              <a href="#salary-goal" class="hover:underline"
+                >8. How to Calculate Hourly Rate from Salary Goal</a
+              >
+            </li>
+            <li>
+              <a href="#marketers" class="hover:underline"
+                >9. Rate Calculator for Digital Marketers</a
+              >
+            </li>
+            <li>
+              <a href="#developers" class="hover:underline"
+                >10. Rate Calculator for Web Developers</a
+              >
+            </li>
+            <li>
+              <a href="#raising-rates" class="hover:underline"
+                >11. How to Raise Your Freelance Rates</a
+              >
+            </li>
+            <li>
+              <a href="#hourly-vs-project" class="hover:underline"
+                >12. Hourly Rate vs Project-Based Pricing</a
+              >
+            </li>
+            <li>
+              <a href="#faq" class="hover:underline"
+                >13. Frequently Asked Questions (FAQ)</a
+              >
+            </li>
+            <li>
+              <a href="#conclusion" class="hover:underline"
+                >14. Conclusion: Know Your Worth</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed text-lg"
+        >
+          <p>
+            Setting your freelance hourly rate is one of the most
+            challenging—and crucial—decisions you will make as an independent
+            professional. Price yourself too high, and you might struggle to
+            land your first few clients. Price yourself too low, and you risk
+            burnout, resentment, and an unsustainable business model.
+          </p>
+          <p>
+            Whether you are a freelance writer, web developer, graphic designer,
+            or consultant, figuring out how much to charge requires more than
+            just guessing or copying your competitors. You need a data-driven
+            approach. That is exactly why we built the
+            <strong>Freelance Hourly Rate Calculator</strong> above, and why we
+            have put together this comprehensive guide to help you understand
+            the math behind your worth.
+          </p>
+
+          <h2
+            id="trap"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-10 mb-4"
+          >
+            The "Employee Mindset" Trap
+          </h2>
+          <p>
+            The most common mistake new freelancers make is carrying over their
+            "employee mindset" into their new business. If you made $80,000 a
+            year at your old job, you might divide that by 2,080 (40 hours a
+            week × 52 weeks) and assume your freelance rate should be around $38
+            per hour.
+          </p>
+          <p><strong>This is a recipe for financial disaster.</strong></p>
+          <p>
+            When you are an employee, your employer covers a massive portion of
+            your actual cost. They pay for half of your payroll taxes, your
+            health insurance, your paid time off, your laptop, your software
+            licenses, and the office space. Furthermore, you get paid for every
+            hour you are at the office, even if you are just checking emails or
+            attending a team-building meeting. As a freelancer, you are the
+            business. You absorb all of those costs, and you only get paid for
+            <em>billable</em> work.
+          </p>
+
+          <h2
+            id="step1"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-10 mb-4"
+          >
+            Step 1: Determine Your Target Annual Salary
+          </h2>
+          <p>
+            Your target annual salary is the amount of money you want to take
+            home <em>before</em> income taxes, but <em>after</em> business
+            expenses. This is the lifestyle number.
+          </p>
+          <p>
+            When setting this number, consider your cost of living, your
+            experience level, and your financial goals. Do you want to match
+            your previous corporate salary? Do you want to earn a 20% premium
+            because of the added risk of being self-employed? Be realistic but
+            ambitious. If you provide expert-level value, your target salary
+            should reflect that expertise.
+          </p>
+
+          <h2
+            id="step2"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-10 mb-4"
+          >
+            Step 2: Calculate Your True Business Expenses
+          </h2>
+          <p>
+            Freelancing is a business, and businesses have overhead. To
+            calculate your true hourly rate, you must estimate your annual
+            business expenses. Common freelance expenses include:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 mt-4 mb-6">
+            <li>
+              <strong>Software Subscriptions:</strong> Adobe Creative Cloud,
+              Microsoft Office, web hosting, CRM tools, invoicing software.
+            </li>
+            <li>
+              <strong>Hardware Depreciation:</strong> Laptops, monitors,
+              cameras, and microphones need to be replaced every few years.
+            </li>
+            <li>
+              <strong>Marketing and Networking:</strong> Website domains,
+              business cards, advertising, and networking event tickets.
+            </li>
+            <li>
+              <strong>Professional Services:</strong> Hiring an accountant,
+              lawyer, or virtual assistant.
+            </li>
+            <li>
+              <strong>Insurance and Benefits:</strong> Health insurance,
+              liability insurance, and retirement contributions (which are no
+              longer matched by an employer).
+            </li>
+            <li>
+              <strong>Self-Employment Tax:</strong> In many countries,
+              self-employed individuals pay a higher tax rate to cover both the
+              employer and employee portions of social security and medicare.
+            </li>
+          </ul>
+          <p>
+            Add all of these up. For many full-time freelancers, annual expenses
+            can easily range from $5,000 to $20,000 or more.
+          </p>
+
+          <h2
+            id="step3"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-10 mb-4"
+          >
+            Step 3: Be Realistic About Billable Hours
+          </h2>
+          <p>
+            This is where the math usually breaks down for beginners. There are
+            40 hours in a standard workweek. However, as a freelancer, you will
+            not be doing client work for all 40 of those hours.
+          </p>
+          <p>
+            You have to run the business. You will spend hours every week
+            pitching new clients, writing proposals, sending invoices, doing
+            your bookkeeping, updating your portfolio, and answering emails.
+            These are <strong>unbillable hours</strong>.
+          </p>
+          <p>
+            A healthy, realistic expectation for a full-time freelancer is to
+            have <strong>20 to 25 billable hours per week</strong>. If you try
+            to bill 40 hours a week, you will likely be working 60 to 70 hours
+            in total, leading straight to burnout. When using our calculator, we
+            recommend setting your "Billable Hours per Week" between 20 and 30.
+          </p>
+
+          <h2
+            id="step4"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-10 mb-4"
+          >
+            Step 4: Factor in Time Off
+          </h2>
+          <p>
+            Employees get paid sick days, national holidays, and paid vacation
+            time. Freelancers do not. If you do not work, you do not get paid.
+          </p>
+          <p>
+            To build a sustainable freelance career, you must build paid time
+            off into your hourly rate. Decide how many weeks you want to take
+            off per year for vacations, holidays, and inevitable sick days. A
+            standard baseline is 4 to 6 weeks. Subtract this from the 52 weeks
+            in a year to find your actual working weeks.
+          </p>
+
+          <h2
+            id="mistakes"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-10 mb-4"
+          >
+            Common Pricing Mistakes to Avoid
+          </h2>
+          <ul class="list-disc pl-6 space-y-4 mt-4">
+            <li>
+              <strong>Competing on Price:</strong> There will always be someone
+              willing to do the job cheaper. Competing on price is a race to the
+              bottom. Compete on value, reliability, and expertise instead.
+            </li>
+            <li>
+              <strong>Forgetting Scope Creep:</strong> If you transition from
+              hourly billing to project-based billing, make sure your project
+              rates are based on your calculated hourly rate, plus a 20% buffer
+              for unexpected revisions and scope creep.
+            </li>
+            <li>
+              <strong>Never Raising Rates:</strong> Inflation happens. Your
+              skills improve. Your software costs go up. You should be
+              evaluating and raising your freelance rates at least once a year.
+            </li>
+          </ul>
+
+          <!-- Ad slot 3: mid-article (AdSense: paste your in-article ad unit here) -->
+          <div id="ad-slot-mid" class="my-10 flex justify-center print-hidden min-h-[250px]">
+            <!-- AdSense placeholder -->
+          </div>
+
+          <h2
+            id="no-login"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-4"
+          >
+            Free No Login Freelance Rate Calculator: Why Privacy Matters
+          </h2>
+          <p>
+            In an era where every "free" tool seems to require an email address,
+            a social media login, or a subscription to a newsletter, finding a
+            <strong>free no login freelance rate calculator</strong> is a breath
+            of fresh air. But why does this matter for your business?
+          </p>
+          <p>
+            When you are planning your financial future, you are dealing with
+            sensitive data: your target income, your business overhead, and your
+            personal lifestyle costs. Many online tools use this data to build
+            user profiles or sell leads to insurance companies and financial
+            services. By using a tool that requires
+            <strong>no signup and no login</strong>, you ensure that your
+            financial planning remains entirely private. All calculations happen
+            locally in your browser, meaning your data never even touches a
+            server.
+          </p>
+
+          <h2
+            id="salary-goal"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-4"
+          >
+            How to Calculate Hourly Rate from Annual Salary Goal: The Formula
+          </h2>
+          <p>
+            Many professionals ask:
+            <strong
+              >how to calculate hourly rate from annual salary goal</strong
+            >
+            without overcomplicating the process? While our calculator automates
+            this, understanding the underlying formula is vital for any business
+            owner.
+          </p>
+          <p>
+            The basic formula is:
+            <code
+              >(Target Salary + Business Expenses) / (Weeks Worked × Billable
+              Hours per Week)</code
+            >.
+          </p>
+          <p>
+            For example, if your goal is a $100,000 take-home pay and you have
+            $15,000 in expenses, your total revenue goal is $115,000. If you
+            plan to work 48 weeks a year at 25 billable hours per week (1,200
+            hours total), your rate would be $95.83 per hour. Understanding this
+            relationship allows you to see exactly which "levers" you can
+            pull—either increasing your hours, decreasing expenses, or raising
+            your rate—to hit your financial targets.
+          </p>
+
+          <h2
+            id="marketers"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-4"
+          >
+            Freelance Rate Calculator for Digital Marketers
+          </h2>
+          <p>
+            If you are looking for a
+            <strong>freelance rate calculator for digital marketers</strong>,
+            you need to account for the specific overhead of the marketing
+            industry. Unlike a general consultant, a digital marketer often
+            carries heavy software costs for SEO tools (like Ahrefs or Semrush),
+            PPC management platforms, and social media scheduling suites.
+          </p>
+          <p>
+            Furthermore, digital marketing is often results-oriented. When
+            setting your rate as a marketer, consider the "Value-Based" overlay.
+            If your SEO strategy generates $50,000 in additional monthly revenue
+            for a client, charging $150/hour is not just fair—it is a bargain.
+            Use our calculator to find your <em>floor</em> (the minimum you need
+            to survive), and then adjust upwards based on the specific ROI you
+            provide to your clients.
+          </p>
+
+          <h2
+            id="developers"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-4"
+          >
+            Freelance Rate Calculator for Web Developers
+          </h2>
+          <p>
+            A <strong>freelance rate calculator for web developers</strong> must
+            factor in more than just coding time. Developers often face "Tech
+            Debt" and maintenance requirements that other freelancers do not.
+            When calculating your rate, ensure you have accounted for your
+            <a
+              href="#step2"
+              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              >business expenses</a
+            >
+            such as high-end hardware, IDE licenses, and server costs for
+            testing environments.
+          </p>
+          <p>
+            Web development also involves significant "deep work" phases. If you
+            are a developer, your
+            <a
+              href="#step3"
+              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              >billable hours</a
+            >
+            might be lower than a consultant's because of the mental fatigue
+            associated with complex logic. Aim for a higher hourly rate to
+            compensate for the specialized knowledge and the rapid pace of
+            technological change in the industry.
+          </p>
+
+          <h2
+            id="raising-rates"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-4"
+          >
+            How to Raise Your Freelance Rates Without Losing Clients
+          </h2>
+          <p>
+            Learning <strong>how to raise your freelance rates</strong> is a
+            vital skill for long-term survival. Many freelancers fear that a
+            price increase will drive away their best clients, but the opposite
+            is often true. High-quality clients value reliability and expertise,
+            and they understand that costs increase over time.
+          </p>
+          <p>
+            The best time to raise your rates is when you are at 80% capacity.
+            This gives you the leverage to negotiate. When communicating the
+            change, focus on the increased value you are providing rather than
+            your own costs. As mentioned in our
+            <a
+              href="#conclusion"
+              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              >conclusion on knowing your worth</a
+            >, your rate should reflect the ROI you deliver, not just the hours
+            you work.
+          </p>
+
+          <h2
+            id="hourly-vs-project"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-4"
+          >
+            Freelance Hourly Rate vs Project-Based Pricing
+          </h2>
+          <p>
+            The debate between
+            <strong>freelance hourly rate vs project-based pricing</strong> is
+            ongoing. While this tool focuses on your hourly "baseline," many
+            experts recommend transitioning to project-based fees once you
+            become highly efficient. If you can complete a $1,000 task in 2
+            hours, your effective hourly rate is $500—far higher than what most
+            clients would agree to on an hourly basis.
+          </p>
+          <p>
+            However, you cannot set a project price accurately without first
+            knowing your
+            <a
+              href="#salary-goal"
+              class="text-indigo-600 dark:text-indigo-400 hover:underline"
+              >hourly rate from your salary goal</a
+            >. Use your hourly rate to estimate the "internal cost" of a
+            project, then add a 20-30% buffer for profit and risk. This ensures
+            that even if a project takes longer than expected, you are still
+            hitting your financial targets.
+          </p>
+
+          <!-- FAQ Section -->
+          <h2
+            id="faq"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-6"
+          >
+            Frequently Asked Questions (FAQ)
+          </h2>
+          <div class="space-y-8">
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">
+                How do I calculate my freelance hourly rate?
+              </h4>
+              <p class="mt-2">
+                To calculate your freelance hourly rate, add your desired annual
+                salary to your annual business expenses, then divide that total
+                by your total annual billable hours.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">
+                What are typical freelance business expenses?
+              </h4>
+              <p class="mt-2">
+                Typical expenses include software subscriptions, hardware,
+                health insurance, marketing costs, and self-employment taxes.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-gray-900 dark:text-white">
+                Should I charge per hour or per project?
+              </h4>
+              <p class="mt-2">
+                Both have pros and cons. Hourly is safer for open-ended work,
+                while project-based can be more profitable if you are highly
+                efficient. Use your hourly rate as the foundation for both.
+              </p>
+            </div>
+          </div>
+
+          <h2
+            id="conclusion"
+            class="text-2xl font-semibold text-gray-900 dark:text-white mt-16 mb-4"
+          >
+            Conclusion: Know Your Worth
+          </h2>
+          <p>
+            Setting your freelance hourly rate is a mix of math and psychology.
+            The math (which our calculator handles for you) ensures that your
+            business is profitable and sustainable. The psychology is having the
+            confidence to ask for that number.
+          </p>
+          <p>
+            Remember that clients are not just paying for an hour of your time.
+            They are paying for the years of experience it took for you to be
+            able to do that work in an hour. They are paying for the convenience
+            of not having to hire a full-time employee. Use the calculator above
+            to find your baseline, stand firm on your pricing, and build the
+            freelance business you deserve.
+          </p>
+        </div>
+      </article>
+    </main>
+
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // DOM Elements
+      const annualSalaryInput = document.getElementById("annualSalary");
+      const annualExpensesInput = document.getElementById("annualExpenses");
+      const weeklyHoursInput = document.getElementById("weeklyHours");
+      const vacationWeeksInput = document.getElementById("vacationWeeks");
+
+      const hourlyRateResult = document.getElementById("hourlyRateResult");
+      const dailyRateResult = document.getElementById("dailyRateResult");
+      const weeklyRateResult = document.getElementById("weeklyRateResult");
+      const totalRevenueResult = document.getElementById("totalRevenueResult");
+      const totalHoursResult = document.getElementById("totalHoursResult");
+      const totalWeeksResult = document.getElementById("totalWeeksResult");
+      const printDate = document.getElementById("print-date");
+
+      // Theme Toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const sunIcon = document.getElementById("theme-icon-sun");
+      const moonIcon = document.getElementById("theme-icon-moon");
+
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+        const isDark = document.documentElement.classList.contains("dark");
+        sunIcon.classList.toggle("hidden", !isDark);
+        moonIcon.classList.toggle("hidden", isDark);
+      }
+
+      themeToggle.addEventListener("click", toggleTheme);
+
+      // Calculation Logic
+      function calculate() {
+        const salary = parseFloat(annualSalaryInput.value) || 0;
+        const expenses = parseFloat(annualExpensesInput.value) || 0;
+        const hours = parseFloat(weeklyHoursInput.value) || 0;
+        const vacation = parseFloat(vacationWeeksInput.value) || 0;
+
+        const totalWeeks = 52 - vacation;
+        const totalHours = totalWeeks * hours;
+        const totalRevenue = salary + expenses;
+        const rate = totalHours > 0 ? totalRevenue / totalHours : 0;
+        const dailyRate = rate * 8;
+        const weeklyRate = rate * hours;
+
+        // Update UI
+        hourlyRateResult.textContent = rate.toFixed(2);
+        dailyRateResult.textContent = dailyRate.toFixed(0);
+        weeklyRateResult.textContent = weeklyRate.toFixed(0);
+        totalRevenueResult.textContent = "$" + totalRevenue.toLocaleString();
+        totalHoursResult.textContent = totalHours.toLocaleString() + " hrs";
+        totalWeeksResult.textContent = totalWeeks + " wks";
+
+        // Update print date
+        printDate.textContent =
+          "Generated on " + new Date().toLocaleDateString();
+      }
+
+      // Event Listeners
+      [
+        annualSalaryInput,
+        annualExpensesInput,
+        weeklyHoursInput,
+        vacationWeeksInput,
+      ].forEach((input) => {
+        input.addEventListener("input", calculate);
+      });
+
+      // Initial Calculation
+      calculate();
+    </script>
+  </body>
+</html>
