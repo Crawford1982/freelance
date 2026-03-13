@@ -1,0 +1,24 @@
+# FreelanceRateCalculator.net
+
+> Free UK-focused freelance rate calculator with supporting pricing guides.
+
+This site helps freelancers calculate a sustainable hourly rate and understand UK market benchmarks for different disciplines.
+
+## Primary resources
+
+- [Calculator & main guide](https://freelanceratecalculator.net/)
+- [Privacy policy](https://freelanceratecalculator.net/privacy.html)
+
+## Blog articles
+
+- [Freelance Pricing & Rates Blog](https://freelanceratecalculator.net/blog/)
+- [Freelance Day Rate vs Hourly Rate](https://freelanceratecalculator.net/blog/day-rate-vs-hourly-rate/)
+- [Freelance Web Developer Rates UK](https://freelanceratecalculator.net/blog/freelance-web-developer-rates-uk/)
+- [Freelance Graphic Designer Rates UK](https://freelanceratecalculator.net/blog/freelance-graphic-designer-rates-uk/)
+- [The Freelancer's Guide to Billable Hours](https://freelanceratecalculator.net/blog/billable-hours-guide/)
+- [How to Raise Your Freelance Rates Without Losing Clients](https://freelanceratecalculator.net/blog/how-to-raise-freelance-rates/)
+
+## Optional
+
+For smaller context windows, prioritise the calculator page and any one blog article most relevant to the user's role (developer, designer, general freelancer, etc.).
+
