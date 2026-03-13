@@ -60,7 +60,7 @@
         "offers": {
           "@type": "Offer",
           "price": "0",
-          "priceCurrency": "USD"
+          "priceCurrency": "GBP"
         },
         "description": "A comprehensive tool for freelancers to calculate their ideal hourly rate based on salary goals, expenses, and billable time."
       }
@@ -212,9 +212,22 @@
         <div
           class="md:col-span-2 space-y-6 bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700"
         >
-          <h2 class="text-lg font-semibold mb-4 flex items-center">
-            <i data-lucide="briefcase" class="w-5 h-5 mr-2 text-indigo-500"></i>
-            Your Goals & Expenses
+          <h2 class="text-lg font-semibold mb-4 flex items-center justify-between">
+            <span class="inline-flex items-center">
+              <i data-lucide="briefcase" class="w-5 h-5 mr-2 text-indigo-500"></i>
+              Your Goals & Expenses
+            </span>
+            <label class="flex items-center space-x-2 text-xs font-medium text-gray-500 dark:text-gray-400">
+              <span>Currency</span>
+              <select
+                id="currencySelect"
+                class="border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-xs px-2 py-1 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                <option value="GBP">£ GBP</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+              </select>
+            </label>
           </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -325,20 +338,21 @@
           <div
             class="bg-indigo-600 dark:bg-indigo-700 rounded-2xl p-6 text-white shadow-lg sticky top-8"
           >
-            <h2 class="text-indigo-100 font-medium mb-2">Target Hourly Rate</h2>
+          <h2 class="text-indigo-100 font-medium mb-2">Target Hourly Rate</h2>
             <div class="text-5xl font-bold mb-2">
-              $<span id="hourlyRateResult">0.00</span
+              <span id="currencySymbol" class="mr-1">£</span
+              ><span id="hourlyRateResult">0.00</span
               ><span class="text-xl font-normal text-indigo-200">/hr</span>
             </div>
             <div class="flex flex-wrap gap-x-4 gap-y-1 text-indigo-200 text-sm mb-4">
-              <span>Day rate: $<span id="dailyRateResult">0</span></span>
-              <span>Week rate: $<span id="weeklyRateResult">0</span></span>
+              <span>Day rate: <span id="currencySymbolDaily">£</span><span id="dailyRateResult">0</span></span>
+              <span>Week rate: <span id="currencySymbolWeekly">£</span><span id="weeklyRateResult">0</span></span>
             </div>
 
             <div class="space-y-4 pt-6 border-t border-indigo-500/50">
               <div class="flex justify-between text-sm">
                 <span class="text-indigo-100">Total Revenue Needed</span>
-                <span class="font-semibold" id="totalRevenueResult">$0</span>
+                <span class="font-semibold" id="totalRevenueResult">£0</span>
               </div>
               <div class="flex justify-between text-sm">
                 <span class="text-indigo-100">Total Billable Hours</span>
@@ -496,9 +510,9 @@
           </h2>
           <p>
             The most common mistake new freelancers make is carrying over their
-            "employee mindset" into their new business. If you made $80,000 a
+            "employee mindset" into their new business. If you made £80,000 a
             year at your old job, you might divide that by 2,080 (40 hours a
-            week × 52 weeks) and assume your freelance rate should be around $38
+            week × 52 weeks) and assume your freelance rate should be around £38
             per hour.
           </p>
           <p><strong>This is a recipe for financial disaster.</strong></p>
@@ -697,10 +711,10 @@
             >.
           </p>
           <p>
-            For example, if your goal is a $100,000 take-home pay and you have
-            $15,000 in expenses, your total revenue goal is $115,000. If you
+            For example, if your goal is a £100,000 take-home pay and you have
+            £15,000 in expenses, your total revenue goal is £115,000. If you
             plan to work 48 weeks a year at 25 billable hours per week (1,200
-            hours total), your rate would be $95.83 per hour. Understanding this
+            hours total), your rate would be £95.83 per hour. Understanding this
             relationship allows you to see exactly which "levers" you can
             pull—either increasing your hours, decreasing expenses, or raising
             your rate—to hit your financial targets.
@@ -723,8 +737,8 @@
           <p>
             Furthermore, digital marketing is often results-oriented. When
             setting your rate as a marketer, consider the "Value-Based" overlay.
-            If your SEO strategy generates $50,000 in additional monthly revenue
-            for a client, charging $150/hour is not just fair—it is a bargain.
+            If your SEO strategy generates £50,000 in additional monthly revenue
+            for a client, charging £150/hour is not just fair—it is a bargain.
             Use our calculator to find your <em>floor</em> (the minimum you need
             to survive), and then adjust upwards based on the specific ROI you
             provide to your clients.
@@ -800,8 +814,8 @@
             <strong>freelance hourly rate vs project-based pricing</strong> is
             ongoing. While this tool focuses on your hourly "baseline," many
             experts recommend transitioning to project-based fees once you
-            become highly efficient. If you can complete a $1,000 task in 2
-            hours, your effective hourly rate is $500—far higher than what most
+            become highly efficient. If you can complete a £1,000 task in 2
+            hours, your effective hourly rate is £500—far higher than what most
             clients would agree to on an hourly basis.
           </p>
           <p>
@@ -895,14 +909,26 @@
       const annualExpensesInput = document.getElementById("annualExpenses");
       const weeklyHoursInput = document.getElementById("weeklyHours");
       const vacationWeeksInput = document.getElementById("vacationWeeks");
+      const currencySelect = document.getElementById("currencySelect");
 
       const hourlyRateResult = document.getElementById("hourlyRateResult");
+      const currencySymbolEl = document.getElementById("currencySymbol");
+      const currencySymbolDailyEl = document.getElementById("currencySymbolDaily");
+      const currencySymbolWeeklyEl = document.getElementById("currencySymbolWeekly");
       const dailyRateResult = document.getElementById("dailyRateResult");
       const weeklyRateResult = document.getElementById("weeklyRateResult");
       const totalRevenueResult = document.getElementById("totalRevenueResult");
       const totalHoursResult = document.getElementById("totalHoursResult");
       const totalWeeksResult = document.getElementById("totalWeeksResult");
       const printDate = document.getElementById("print-date");
+
+      const currencyMap = {
+        GBP: "£",
+        USD: "$",
+        EUR: "€",
+      };
+
+      let currentCurrency = "GBP";
 
       // Theme Toggle
       const themeToggle = document.getElementById("theme-toggle");
@@ -936,7 +962,8 @@
         hourlyRateResult.textContent = rate.toFixed(2);
         dailyRateResult.textContent = dailyRate.toFixed(0);
         weeklyRateResult.textContent = weeklyRate.toFixed(0);
-        totalRevenueResult.textContent = "$" + totalRevenue.toLocaleString();
+        const symbol = currencyMap[currentCurrency] || "£";
+        totalRevenueResult.textContent = symbol + totalRevenue.toLocaleString();
         totalHoursResult.textContent = totalHours.toLocaleString() + " hrs";
         totalWeeksResult.textContent = totalWeeks + " wks";
 
@@ -946,6 +973,21 @@
       }
 
       // Event Listeners
+      function updateCurrencySymbols() {
+        const symbol = currencyMap[currentCurrency] || "£";
+        if (currencySymbolEl) currencySymbolEl.textContent = symbol;
+        if (currencySymbolDailyEl) currencySymbolDailyEl.textContent = symbol;
+        if (currencySymbolWeeklyEl) currencySymbolWeeklyEl.textContent = symbol;
+      }
+
+      if (currencySelect) {
+        currencySelect.addEventListener("change", () => {
+          currentCurrency = currencySelect.value;
+          updateCurrencySymbols();
+          calculate();
+        });
+      }
+
       [
         annualSalaryInput,
         annualExpensesInput,
@@ -956,6 +998,7 @@
       });
 
       // Initial Calculation
+      updateCurrencySymbols();
       calculate();
     </script>
   </body>
