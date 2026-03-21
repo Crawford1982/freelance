@@ -1,24 +1,35 @@
 # FreelanceRateCalculator.net
 
-> Free UK-focused freelance rate calculator with supporting pricing guides.
+> Free UK-focused freelance rate calculator with supporting pricing guides and tax tools.
 
-This site helps freelancers calculate a sustainable hourly rate and understand UK market benchmarks for different disciplines.
+This site helps freelancers calculate a sustainable hourly rate, understand UK market benchmarks for different disciplines, and estimate their tax liability. All tools are free, require no login, and run entirely in the browser.
 
-## Primary resources
+## Primary tools
 
-- [Calculator & main guide](https://freelanceratecalculator.net/)
-- [Privacy policy](https://freelanceratecalculator.net/privacy.html)
+- [Freelance Rate Calculator](https://freelanceratecalculator.net/) — main calculator: income goal + expenses + hours → minimum hourly rate
+- [UK Freelance Tax Calculator 2025/26](https://freelanceratecalculator.net/tools/uk-freelance-tax-calculator/) — income tax + Class 4 NI, Scottish rates, student loan, pension
+- [IR35 Take-Home Calculator](https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/) — inside vs outside IR35 comparison with rate uplift guide
+- [Tools index](https://freelanceratecalculator.net/tools/)
 
-## Blog articles
+## Blog articles — UK rate benchmarks by profession
+
+- [Freelance Web Developer Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-web-developer-rates-uk/)
+- [Freelance Graphic Designer Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-graphic-designer-rates-uk/)
+- [Freelance Copywriter Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-copywriter-rates-uk/)
+- [Freelance SEO Consultant Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-seo-consultant-rates-uk/)
+- [Freelance Photographer Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-photographer-rates-uk/)
+- [Freelance Marketing Consultant Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-marketing-consultant-rates-uk/)
+- [Freelance UX Designer Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-ux-designer-rates-uk/)
+- [Freelance Accountant Rates UK 2026](https://freelanceratecalculator.net/blog/freelance-accountant-rates-uk/)
+
+## Blog articles — pricing strategy
 
 - [Freelance Pricing & Rates Blog](https://freelanceratecalculator.net/blog/)
 - [Freelance Day Rate vs Hourly Rate](https://freelanceratecalculator.net/blog/day-rate-vs-hourly-rate/)
-- [Freelance Web Developer Rates UK](https://freelanceratecalculator.net/blog/freelance-web-developer-rates-uk/)
-- [Freelance Graphic Designer Rates UK](https://freelanceratecalculator.net/blog/freelance-graphic-designer-rates-uk/)
 - [The Freelancer's Guide to Billable Hours](https://freelanceratecalculator.net/blog/billable-hours-guide/)
 - [How to Raise Your Freelance Rates Without Losing Clients](https://freelanceratecalculator.net/blog/how-to-raise-freelance-rates/)
+- [IR35 and Freelance Rates: Inside vs Outside Take-Home](https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/)
 
 ## Optional
 
-For smaller context windows, prioritise the calculator page and any one blog article most relevant to the user's role (developer, designer, general freelancer, etc.).
-
+For smaller context windows, prioritise the calculator page and any one article most relevant to the user's role (e.g. developer, designer, copywriter, contractor) or tax situation (IR35, self-assessment).

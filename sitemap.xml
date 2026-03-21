@@ -1,36 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage / Calculator -->
   <url>
     <loc>https://freelanceratecalculator.net/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Tools -->
   <url>
-    <loc>https://freelanceratecalculator.net/privacy.html</loc>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://freelanceratecalculator.net/blog/</loc>
+    <loc>https://freelanceratecalculator.net/tools/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://freelanceratecalculator.net/tools/uk-freelance-tax-calculator/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Existing blog posts -->
+  <url>
     <loc>https://freelanceratecalculator.net/blog/day-rate-vs-hourly-rate/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freelanceratecalculator.net/blog/freelance-web-developer-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freelanceratecalculator.net/blog/freelance-graphic-designer-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://freelanceratecalculator.net/blog/billable-hours-guide/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://freelanceratecalculator.net/blog/how-to-raise-freelance-rates/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-</urlset>
 
+  <!-- New blog posts — Priority 1 niche rates -->
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/freelance-copywriter-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/freelance-seo-consultant-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/freelance-photographer-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/freelance-marketing-consultant-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/freelance-ux-designer-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/freelance-accountant-rates-uk/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- IR35 guide -->
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Privacy -->
+  <url>
+    <loc>https://freelanceratecalculator.net/privacy.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

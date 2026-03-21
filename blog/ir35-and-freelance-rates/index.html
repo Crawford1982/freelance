@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>IR35 and Freelance Rates: What Every UK Contractor Must Know | Freelance Rate Calculator</title>
+  <meta name="description" content="How IR35 affects your freelance day rate — inside vs outside IR35 take-home calculator, rate uplift guide, and what it means for UK contractors in 2026.">
+  <link rel="canonical" href="https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/">
+
+  <meta property="og:title" content="IR35 and Freelance Rates: Inside vs Outside Take-Home Calculator">
+  <meta property="og:description" content="Calculate the real impact of IR35 on your day rate take-home. Interactive inside vs outside IR35 comparison for UK contractors.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://freelanceratecalculator.net/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IR35 and Freelance Rates: Inside vs Outside Take-Home Calculator">
+  <meta name="twitter:description" content="Calculate the real impact of IR35 on your day rate take-home. Interactive inside vs outside IR35 comparison for UK contractors.">
+  <meta name="twitter:image" content="https://freelanceratecalculator.net/og-image.png">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"IR35 and Freelance Rates: What Every UK Contractor Must Know","datePublished":"2026-03-21","dateModified":"2026-03-21","author":{"@type":"Organization","name":"Freelance Rate Calculator","url":"https://freelanceratecalculator.net"},"publisher":{"@type":"Organization","name":"Freelance Rate Calculator"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/"}}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freelanceratecalculator.net/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://freelanceratecalculator.net/blog/"},{"@type":"ListItem","position":3,"name":"IR35 and Freelance Rates","item":"https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/"}]}</script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is IR35 and how does it affect my day rate?","acceptedAnswer":{"@type":"Answer","text":"IR35 is UK tax legislation designed to prevent 'disguised employment'. If your contract is deemed inside IR35, you are taxed as an employee on your income — significantly reducing your take-home compared to operating outside IR35 through a limited company. Contractors inside IR35 typically take home 20-30% less from the same gross day rate."}},{"@type":"Question","name":"How much more should I charge if inside IR35?","acceptedAnswer":{"@type":"Answer","text":"As a rough guide, you need to increase your day rate by approximately 25-30% for an inside IR35 engagement to achieve the same net income as an equivalent outside IR35 contract. The exact uplift depends on your total earnings, personal allowance usage, and circumstances."}},{"@type":"Question","name":"Who decides if I'm inside or outside IR35?","acceptedAnswer":{"@type":"Answer","text":"For engagements with medium and large private sector clients (and all public sector), the end-client determines IR35 status using a Status Determination Statement (SDS). For small private sector clients, the contractor's own limited company makes the determination. HMRC's CEST tool can provide guidance but is not definitive."}},{"@type":"Question","name":"Can I still operate through a limited company if inside IR35?","acceptedAnswer":{"@type":"Answer","text":"Yes — you can still operate through a limited company inside IR35, but you'll be taxed as if you're an employee on that income. Many contractors prefer to use an umbrella company for inside IR35 engagements to simplify administration. Both routes result in broadly similar tax treatment."}}]}</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy:#1e1b4b;--indigo:#4f46e5;--indigo-light:#eef2ff;--green:#16a34a;--green-light:#f0fdf4;--amber:#d97706;--amber-light:#fffbeb;--red:#dc2626;--red-light:#fef2f2;--grey-50:#f8fafc;--grey-100:#f1f5f9;--grey-200:#e2e8f0;--text:#1e293b;--text-light:#64748b;--border:#e2e8f0;--radius:10px;--shadow:0 1px 3px rgba(0,0,0,0.08);}
+    html{font-size:16px;scroll-behavior:smooth;}
+    body{font-family:'Inter',-apple-system,sans-serif;background:#f8fafc;color:var(--text);line-height:1.7;}
+    nav{background:var(--navy);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+    .nav-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;}
+    .nav-logo{color:#fff;font-weight:700;font-size:1.05rem;text-decoration:none;display:flex;align-items:center;gap:8px;}
+    .nav-logo svg{color:#818cf8;}
+    .nav-cta{background:var(--indigo);color:#fff;padding:7px 16px;border-radius:6px;text-decoration:none;font-size:0.85rem;font-weight:600;}
+    .nav-cta:hover{background:#4338ca;}
+    .page-wrap{max-width:900px;margin:0 auto;padding:0 20px;}
+    .hero{background:linear-gradient(135deg,#1f2937 0%,#111827 100%);color:#fff;padding:50px 24px 42px;}
+    .hero-inner{max-width:900px;margin:0 auto;}
+    .hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fca5a5;font-size:0.78rem;font-weight:600;letter-spacing:0.04em;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+    .hero h1{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:700;line-height:1.25;margin-bottom:14px;}
+    .hero-sub{font-size:1rem;color:#d1d5db;max-width:640px;margin-bottom:24px;}
+    .hero-meta{font-size:0.81rem;color:#9ca3af;display:flex;gap:18px;flex-wrap:wrap;}
+    .article-layout{display:grid;grid-template-columns:1fr 270px;gap:40px;padding:40px 0 60px;align-items:start;}
+    @media(max-width:720px){.article-layout{grid-template-columns:1fr;}.sidebar{display:none;}}
+    .prose h2{font-size:1.3rem;font-weight:700;color:var(--navy);margin:38px 0 13px;padding-bottom:8px;border-bottom:2px solid var(--grey-200);}
+    .prose h2:first-child{margin-top:0;}
+    .prose h3{font-size:1.02rem;font-weight:600;color:var(--navy);margin:26px 0 9px;}
+    .prose p{margin-bottom:15px;line-height:1.75;}
+    .prose ul,.prose ol{margin:10px 0 16px 20px;}
+    .prose li{margin-bottom:7px;line-height:1.65;}
+    .prose strong{color:var(--navy);font-weight:600;}
+    .prose a{color:var(--indigo);text-decoration:underline;}
+    .table-wrap{overflow-x:auto;margin:18px 0 26px;border-radius:var(--radius);border:1px solid var(--border);}
+    table{width:100%;border-collapse:collapse;font-size:0.88rem;}
+    th{background:var(--navy);color:#fff;padding:11px 15px;text-align:left;font-weight:600;font-size:0.8rem;letter-spacing:0.03em;}
+    td{padding:10px 15px;border-bottom:1px solid var(--border);}
+    tr:last-child td{border-bottom:none;}
+    tr:nth-child(even) td{background:var(--grey-50);}
+    .callout{border-radius:var(--radius);padding:18px 20px;margin:22px 0;}
+    .callout-indigo{background:var(--indigo-light);border:1px solid #c7d2fe;}
+    .callout-green{background:var(--green-light);border:1px solid #bbf7d0;}
+    .callout-amber{background:var(--amber-light);border:1px solid #fde68a;}
+    .callout-red{background:var(--red-light);border:1px solid #fecaca;}
+    .callout-title{font-weight:700;font-size:0.88rem;margin-bottom:7px;}
+    .callout-indigo .callout-title{color:var(--indigo);}
+    .callout-green .callout-title{color:var(--green);}
+    .callout-amber .callout-title{color:var(--amber);}
+    .callout-red .callout-title{color:var(--red);}
+    .callout p,.callout li{font-size:0.9rem;line-height:1.6;}
+    .callout ul{margin:7px 0 0 17px;}
+
+    /* IR35 Calculator styles */
+    .calc-box{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;margin:28px 0;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
+    .calc-box h3{font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:20px;}
+    .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+    @media(max-width:560px){.calc-grid{grid-template-columns:1fr;}}
+    .calc-field label{display:block;font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:6px;}
+    .calc-field input,.calc-field select{width:100%;padding:10px 12px;border:1px solid var(--grey-200);border-radius:8px;font-size:0.95rem;font-family:inherit;color:var(--text);background:#f8fafc;}
+    .calc-field input:focus,.calc-field select:focus{outline:none;border-color:var(--indigo);box-shadow:0 0 0 3px rgba(79,70,229,0.1);}
+    .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;}
+    @media(max-width:560px){.results-grid{grid-template-columns:1fr;}}
+    .result-card{border-radius:10px;padding:18px;}
+    .result-card.outside{background:#f0fdf4;border:2px solid #bbf7d0;}
+    .result-card.inside{background:#fef2f2;border:2px solid #fecaca;}
+    .result-card h4{font-size:0.82rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:12px;}
+    .result-card.outside h4{color:var(--green);}
+    .result-card.inside h4{color:var(--red);}
+    .result-big{font-size:1.8rem;font-weight:800;margin-bottom:4px;}
+    .result-card.outside .result-big{color:var(--green);}
+    .result-card.inside .result-big{color:var(--red);}
+    .result-row{display:flex;justify-content:space-between;font-size:0.82rem;color:var(--text-light);padding:4px 0;border-bottom:1px solid rgba(0,0,0,0.06);}
+    .result-row:last-child{border-bottom:none;}
+    .result-row span:last-child{font-weight:600;color:var(--text);}
+    .uplift-banner{background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;margin-top:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+    .uplift-banner .label{font-size:0.85rem;color:#a5b4fc;}
+    .uplift-banner .value{font-size:1.1rem;font-weight:700;color:#fbbf24;}
+    .ir35-note{font-size:0.78rem;color:var(--text-light);margin-top:12px;text-align:center;}
+    .ir35-note a{color:var(--indigo);}
+
+    .sidebar{position:sticky;top:72px;}
+    .sidebar-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;margin-bottom:18px;box-shadow:var(--shadow);}
+    .sidebar-card h3{font-size:0.88rem;font-weight:700;color:var(--navy);margin-bottom:12px;}
+    .toc-list{list-style:none;padding:0;margin:0;}
+    .toc-list li{border-bottom:1px solid var(--grey-100);}
+    .toc-list li:last-child{border-bottom:none;}
+    .toc-list a{display:block;padding:7px 0;font-size:0.81rem;color:var(--text-light);text-decoration:none;}
+    .toc-list a:hover{color:var(--indigo);}
+    .sidebar-cta{display:block;background:var(--indigo);color:#fff;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:0.88rem;text-decoration:none;margin-bottom:10px;}
+    .sidebar-cta:hover{background:#4338ca;}
+    .sidebar-ir35{display:block;background:#1f2937;color:#fff;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:0.88rem;text-decoration:none;margin-bottom:10px;}
+    .sidebar-ir35:hover{background:#111827;}
+    footer{background:var(--navy);color:#94a3b8;padding:28px 24px;font-size:0.8rem;text-align:center;}
+    footer a{color:#818cf8;text-decoration:none;}
+    .footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:10px;}
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HETLWKEDV0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HETLWKEDV0');
+  </script>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="/" class="nav-logo">
+    <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 11h.01M12 11h.01M15 11h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    Freelance Rate Calculator
+  </a>
+  <a href="/" class="nav-cta">Calculate My Rate →</a>
+</div></nav>
+
+<div class="hero"><div class="hero-inner">
+  <div class="hero-badge">⚖️ IR35 &amp; Tax</div>
+  <h1>IR35 and Freelance Rates: Inside vs Outside Take-Home</h1>
+  <p class="hero-sub">IR35 can cut your take-home by 20–30% from the same gross day rate. Use the calculator below to see the real difference — and find out how much more you need to charge for inside-IR35 engagements.</p>
+  <div class="hero-meta"><span>📅 March 2026</span><span>⏱ 8 min read</span></div>
+</div></div>
+
+<div class="page-wrap"><div class="article-layout">
+<article class="prose">
+
+<h2 id="calculator">IR35 Take-Home Calculator: Inside vs Outside</h2>
+
+<div class="calc-box">
+  <h3>🧮 Inside vs Outside IR35 — Annual Take-Home Comparison</h3>
+  <div class="calc-grid">
+    <div class="calc-field">
+      <label for="dayRate">Your Day Rate (£)</label>
+      <input type="number" id="dayRate" value="500" min="100" max="5000" step="25">
+    </div>
+    <div class="calc-field">
+      <label for="daysYear">Billable Days per Year</label>
+      <input type="number" id="daysYear" value="220" min="50" max="260" step="5">
+    </div>
+  </div>
+  <div class="results-grid">
+    <div class="result-card outside">
+      <h4>✅ Outside IR35 (Ltd Co)</h4>
+      <div class="result-big" id="outsideTakeHome">—</div>
+      <div style="font-size:0.78rem;color:var(--green);margin-bottom:10px;">Estimated annual take-home</div>
+      <div class="result-row"><span>Gross revenue</span><span id="outsideGross">—</span></div>
+      <div class="result-row"><span>Corporation tax (est.)</span><span id="outsideCT">—</span></div>
+      <div class="result-row"><span>Income tax + NI</span><span id="outsidePAYE">—</span></div>
+      <div class="result-row"><span>Effective rate</span><span id="outsideRate">—</span></div>
+    </div>
+    <div class="result-card inside">
+      <h4>⚠️ Inside IR35 (Umbrella)</h4>
+      <div class="result-big" id="insideTakeHome">—</div>
+      <div style="font-size:0.78rem;color:var(--red);margin-bottom:10px;">Estimated annual take-home</div>
+      <div class="result-row"><span>Gross revenue</span><span id="insideGross">—</span></div>
+      <div class="result-row"><span>Employer NI (12.8%)</span><span id="insideEmployerNI">—</span></div>
+      <div class="result-row"><span>Income tax + Employee NI</span><span id="insidePAYE">—</span></div>
+      <div class="result-row"><span>Effective rate</span><span id="insideRate">—</span></div>
+    </div>
+  </div>
+  <div class="uplift-banner">
+    <div>
+      <div class="label">Annual difference</div>
+      <div class="value" id="annualDiff">—</div>
+    </div>
+    <div>
+      <div class="label">Day rate uplift needed (inside IR35)</div>
+      <div class="value" id="upliftNeeded">—</div>
+    </div>
+    <div>
+      <div class="label">Take-home difference</div>
+      <div class="value" id="pctDiff">—</div>
+    </div>
+  </div>
+  <p class="ir35-note">Estimates only — assumes standard personal allowance (£12,570), basic/higher rate thresholds 2025/26. No pension contributions, expenses, or accountant savings included. For a precise calculation including your exact circumstances, use the <a href="https://ir35guide.co.uk" target="_blank" rel="noopener">IR35 Guide calculator</a>.</p>
+</div>
+
+<h2 id="what-is-ir35">What Is IR35 and Why Does It Matter for Your Rate?</h2>
+<p>IR35 — formally the Intermediaries Legislation — is UK tax law designed to prevent what HMRC calls "disguised employment". The core question is simple: if you removed the limited company from the picture, would you look and behave like an employee of your client?</p>
+<p>If the answer is yes, you're "inside IR35" — and your income from that contract is taxed as employment income, not as business income. That distinction is financially enormous. An outside-IR35 contractor operating efficiently through a limited company might keep 70–75p of every £1 they earn. An inside-IR35 contractor using an umbrella company might keep just 55–62p of every £1 — from exactly the same gross day rate.</p>
+
+<div class="callout callout-amber">
+  <div class="callout-title">⚠️ IR35 Applies Per Contract, Not Per Person</div>
+  <p>You can have some contracts inside IR35 and others outside, simultaneously. Each engagement is assessed independently. A contractor might work two days a week outside IR35 with a small client and three days a week inside IR35 for a large corporation — and needs to manage the tax for each separately.</p>
+</div>
+
+<h2 id="inside-outside">Inside IR35 vs Outside IR35: The Key Differences</h2>
+
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Factor</th><th>Outside IR35</th><th>Inside IR35</th></tr></thead>
+    <tbody>
+      <tr><td>Taxed as</td><td>Business owner (dividends + salary)</td><td>Employee (PAYE)</td></tr>
+      <tr><td>Employer NI</td><td>Not payable on dividends</td><td>~12.8% deducted before you receive payment</td></tr>
+      <tr><td>Pension</td><td>Via company contributions (tax efficient)</td><td>Umbrella may offer workplace pension</td></tr>
+      <tr><td>Expenses</td><td>Can claim legitimate business expenses</td><td>Very limited — no travel to site</td></tr>
+      <tr><td>Typical vehicle</td><td>Personal Service Company (Ltd)</td><td>Umbrella company or Ltd (taxed as employee)</td></tr>
+      <tr><td>Take-home (£500/day est.)</td><td>~£68,000–£72,000/yr</td><td>~£52,000–£57,000/yr</td></tr>
+      <tr><td>Admin burden</td><td>Higher (accounts, corporation tax)</td><td>Lower (umbrella handles payroll)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id="rate-uplift">How Much Extra Should You Charge Inside IR35?</h2>
+<p>The standard rule of thumb is to add <strong>25–30% to your outside-IR35 rate</strong> for an equivalent inside-IR35 engagement. At lower day rates the uplift needed is slightly less; at higher rates where you'd otherwise pay higher-rate dividends, it can exceed 30%.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Outside IR35 Rate</th><th>Equivalent Inside IR35 Rate</th><th>Annual Difference</th></tr></thead>
+    <tbody>
+      <tr><td>£300/day</td><td>~£385/day</td><td>~£14,000/yr less take-home if no uplift</td></tr>
+      <tr><td>£400/day</td><td>~£510/day</td><td>~£16,000/yr less take-home if no uplift</td></tr>
+      <tr><td>£500/day</td><td>~£640/day</td><td>~£18,000/yr less take-home if no uplift</td></tr>
+      <tr><td>£600/day</td><td>~£780/day</td><td>~£20,000/yr less take-home if no uplift</td></tr>
+      <tr><td>£700/day</td><td>~£910/day</td><td>~£22,000/yr less take-home if no uplift</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p>These are estimates. For your specific situation — including whether you draw a salary from your company, your pension contributions, and any legitimate business expenses — use the <a href="https://ir35guide.co.uk" target="_blank" rel="noopener">IR35 Guide</a> for a precise take-home calculation.</p>
+
+<h2 id="status-tests">How Is IR35 Status Determined?</h2>
+<p>IR35 status comes down to three key employment tests — drawn from case law and applied by HMRC:</p>
+<ul>
+  <li><strong>Control:</strong> Does the client control what work you do, how you do it, and when? High client control = inside IR35 risk.</li>
+  <li><strong>Substitution:</strong> Can you send a substitute to do the work without the client's approval? A genuine right of substitution is the strongest outside-IR35 indicator.</li>
+  <li><strong>Mutuality of obligation (MOO):</strong> Is the client obliged to offer you work, and are you obliged to accept it? If yes, that suggests employment.</li>
+</ul>
+<p>Secondary factors include whether you provide your own equipment, whether you work exclusively for one client, whether you're integrated into the client's team, and how you present yourself to the client's organisation.</p>
+
+<div class="callout callout-indigo">
+  <div class="callout-title">📖 Get the Full IR35 Picture</div>
+  <p>This guide covers the rate impact of IR35. For a comprehensive breakdown of how to determine your status, what to include in contracts, and how to work safely both inside and outside IR35, visit <a href="https://ir35guide.co.uk" target="_blank" rel="noopener" style="font-weight:700;">ir35guide.co.uk</a> — a dedicated resource for UK contractors navigating IR35.</p>
+</div>
+
+<h2 id="who-decides">Who Determines Your IR35 Status?</h2>
+<p>Since April 2021 (Off-Payroll Working rules), the responsibility for IR35 determination shifted:</p>
+<ul>
+  <li><strong>Large and medium private sector clients:</strong> The end-client determines status and issues a Status Determination Statement (SDS). You can challenge it but cannot override it.</li>
+  <li><strong>Public sector clients:</strong> The end-client always determines status — this has been the case since April 2017.</li>
+  <li><strong>Small private sector clients:</strong> You (through your limited company) still determine your own status. A small company is defined as meeting two of: turnover under £10.2m, balance sheet under £5.1m, fewer than 50 employees.</li>
+</ul>
+
+<h2 id="your-rate">Calculating Your Rate for IR35 Contracts</h2>
+<p>First, establish your minimum viable rate using our <a href="/">Freelance Rate Calculator</a> — plug in your income target, expenses, and working hours. That gives you your outside-IR35 floor. Then, for inside-IR35 engagements, apply the 25–30% uplift from that baseline.</p>
+<p>Remember: inside IR35 you lose the ability to claim many business expenses. Add an estimate of your normal annual expenses (software, training, equipment) back into your income requirement before calculating the uplift — because you'll need to fund those from net pay rather than pre-tax business revenue.</p>
+
+<h2 id="faq">Frequently Asked Questions</h2>
+
+<h3>What is IR35 and how does it affect my day rate?</h3>
+<p>IR35 is UK tax legislation that determines whether a contractor is taxed as an employee or as a self-employed business owner. Inside IR35, income from that contract is subject to PAYE tax and National Insurance, reducing your take-home by roughly 20–30% compared to outside IR35 at the same gross day rate.</p>
+
+<h3>How much more should I charge if inside IR35?</h3>
+<p>Add approximately 25–30% to your outside-IR35 equivalent rate. If you'd normally charge £500/day outside IR35, an inside-IR35 engagement should be quoted at around £625–£650/day to achieve equivalent net income. Use the calculator above for personalised estimates.</p>
+
+<h3>Who decides if I'm inside or outside IR35?</h3>
+<p>For medium and large private sector clients (and all public sector), the end-client makes the determination using a Status Determination Statement. For small private sector clients, you determine your own status. HMRC's CEST tool can help but is not legally definitive.</p>
+
+<h3>Can I still operate through a limited company if inside IR35?</h3>
+<p>Yes, but the income from that contract will be taxed as if you're an employee. Many contractors find it simpler to use an umbrella company for inside-IR35 engagements. The tax treatment is broadly similar; the difference is mainly administrative.</p>
+
+</article>
+
+<aside class="sidebar">
+  <div class="sidebar-card">
+    <h3>📋 Contents</h3>
+    <ul class="toc-list">
+      <li><a href="#calculator">Take-home calculator</a></li>
+      <li><a href="#what-is-ir35">What is IR35?</a></li>
+      <li><a href="#inside-outside">Inside vs outside comparison</a></li>
+      <li><a href="#rate-uplift">How much extra to charge</a></li>
+      <li><a href="#status-tests">IR35 status tests</a></li>
+      <li><a href="#who-decides">Who decides status?</a></li>
+      <li><a href="#your-rate">Calculating your rate</a></li>
+      <li><a href="#faq">FAQs</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h3>🧮 Calculate Your Base Rate</h3>
+    <p style="font-size:0.84rem;color:var(--text-light);margin-bottom:12px;">Find your minimum viable outside-IR35 rate first — then apply the IR35 uplift.</p>
+    <a href="/" class="sidebar-cta">Open Rate Calculator →</a>
+  </div>
+  <div class="sidebar-card" style="background:#1f2937;border-color:#374151;">
+    <h3 style="color:#f9fafb;">⚖️ Full IR35 Guidance</h3>
+    <p style="font-size:0.84rem;color:#9ca3af;margin-bottom:12px;">Status tests, contract reviews, SDS challenges — everything UK contractors need to know about IR35.</p>
+    <a href="https://ir35guide.co.uk" target="_blank" rel="noopener" class="sidebar-ir35">Visit IR35 Guide →</a>
+  </div>
+  <div class="sidebar-card" style="background:var(--indigo-light);border-color:#c7d2fe;">
+    <h3 style="color:var(--indigo);">📖 Related</h3>
+    <ul style="list-style:none;padding:0;margin:0;">
+      <li style="padding:7px 0;border-bottom:1px solid #e0e7ff;"><a href="/blog/freelance-web-developer-rates-uk/" style="font-size:0.83rem;color:var(--navy);text-decoration:none;">Web developer rates UK →</a></li>
+      <li style="padding:7px 0;border-bottom:1px solid #e0e7ff;"><a href="/blog/day-rate-vs-hourly-rate/" style="font-size:0.83rem;color:var(--navy);text-decoration:none;">Day rate vs hourly rate →</a></li>
+      <li style="padding:7px 0;border-bottom:1px solid #e0e7ff;"><a href="/tools/uk-freelance-tax-calculator/" style="font-size:0.83rem;color:var(--navy);text-decoration:none;">UK tax calculator →</a></li>
+      <li style="padding:7px 0;"><a href="/blog/how-to-raise-freelance-rates/" style="font-size:0.83rem;color:var(--navy);text-decoration:none;">How to raise your rates →</a></li>
+    </ul>
+  </div>
+</aside>
+</div></div>
+
+<footer>
+  <div class="footer-links">
+    <a href="/">Calculator</a>
+    <a href="/blog/">Blog</a>
+    <a href="/tools/uk-freelance-tax-calculator/">Tax Calculator</a>
+    <a href="https://ir35guide.co.uk" target="_blank" rel="noopener">IR35 Guide</a>
+    <a href="/privacy.html">Privacy</a>
+  </div>
+  <p>FreelanceRateCalculator.net — Free, no signup, instant. Calculate your rate in seconds.</p>
+  <p style="margin-top:6px;">© 2026 FreelanceRateCalculator.net</p>
+</footer>
+
+<script>
+function fmt(n){return'£'+Math.round(n).toLocaleString('en-GB');}
+function pct(n){return Math.round(n)+'%';}
+
+function calcIR35(){
+  var dayRate=parseFloat(document.getElementById('dayRate').value)||500;
+  var days=parseFloat(document.getElementById('daysYear').value)||220;
+  var gross=dayRate*days;
+
+  // --- Outside IR35 (Ltd Co, simple model) ---
+  // Salary = personal allowance (£12,570), dividends = rest after corp tax
+  var salary=12570;
+  var corpProfit=gross-salary; // simplified: salary is deductible
+  var ct=corpProfit>50000?corpProfit*0.25:corpProfit*0.19; // 19% small profits, 25% main rate
+  var availableForDivs=corpProfit-ct;
+  // Income tax on dividends: £500 allowance, then 8.75% basic up to £50,270, 33.75% higher
+  var divAllowance=500;
+  var basicDivRoom=Math.max(0,50270-salary);
+  var taxableDivs=Math.max(0,availableForDivs-divAllowance);
+  var basicDivTax=Math.min(taxableDivs,basicDivRoom)*0.0875;
+  var higherDivTax=Math.max(0,taxableDivs-basicDivRoom)*0.3375;
+  var outsideTax=basicDivTax+higherDivTax;
+  // NI Class 4 on salary (above PA = 0 since salary = PA)
+  var outsideNI=0; // salary at PA = no NI
+  var outsideTotal=salary+availableForDivs-outsideTax-outsideNI;
+
+  document.getElementById('outsideTakeHome').textContent=fmt(outsideTotal);
+  document.getElementById('outsideGross').textContent=fmt(gross);
+  document.getElementById('outsideCT').textContent=fmt(ct);
+  document.getElementById('outsidePAYE').textContent=fmt(outsideTax);
+  document.getElementById('outsideRate').textContent=pct((1-(outsideTax+ct)/gross)*100);
+
+  // --- Inside IR35 (Umbrella) ---
+  // Employer NI at 13.8% applied first (gross is treated as employment cost)
+  var empNIRate=0.138;
+  var grossForEmployee=gross/(1+empNIRate); // back-calculate employee gross
+  var employerNI=gross-grossForEmployee;
+  // Employee gross = grossForEmployee
+  // Income tax on employee gross
+  var pa=12570;
+  var taxable=Math.max(0,grossForEmployee-pa);
+  var basicTax=Math.min(taxable,37700)*0.20;
+  var higherTax=Math.max(0,taxable-37700)*0.40;
+  var incomeTax=basicTax+higherTax;
+  // Employee NI: 8% on £12,570-£50,270, 2% above
+  var eeNI1=Math.min(Math.max(0,grossForEmployee-12570),37700)*0.08;
+  var eeNI2=Math.max(0,grossForEmployee-50270)*0.02;
+  var employeeNI=eeNI1+eeNI2;
+  var insideTotal=grossForEmployee-incomeTax-employeeNI;
+
+  document.getElementById('insideTakeHome').textContent=fmt(insideTotal);
+  document.getElementById('insideGross').textContent=fmt(gross);
+  document.getElementById('insideEmployerNI').textContent=fmt(employerNI);
+  document.getElementById('insidePAYE').textContent=fmt(incomeTax+employeeNI);
+  document.getElementById('insideRate').textContent=pct((1-(incomeTax+employeeNI+employerNI)/gross)*100);
+
+  // Difference
+  var diff=outsideTotal-insideTotal;
+  document.getElementById('annualDiff').textContent=fmt(diff)+'/yr';
+  // Uplift: what day rate inside IR35 = outsideTotal take-home?
+  // outsideTotal from insideTotal requires iterating, approximate:
+  var upliftPct=Math.round((diff/insideTotal)*100);
+  document.getElementById('upliftNeeded').textContent='+'+upliftPct+'% (≈ '+fmt(dayRate*(1+upliftPct/100))+'/day)';
+  document.getElementById('pctDiff').textContent=Math.round((diff/outsideTotal)*100)+'% less take-home';
+}
+
+document.getElementById('dayRate').addEventListener('input',calcIR35);
+document.getElementById('daysYear').addEventListener('input',calcIR35);
+calcIR35();
+</script>
+</body>
+</html>
