@@ -3,7 +3,7 @@
   <!-- Homepage / Calculator -->
   <url>
     <loc>https://freelanceratecalculator.net/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -25,7 +25,7 @@
   <!-- Blog index -->
   <url>
     <loc>https://freelanceratecalculator.net/blog/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -71,7 +71,7 @@
   </url>
   <url>
     <loc>https://freelanceratecalculator.net/blog/freelance-seo-consultant-rates-uk/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -103,7 +103,7 @@
   <!-- IR35 guide -->
   <url>
     <loc>https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/</loc>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
