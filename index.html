@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="favicon.png" />
-    <title>Freelance Hourly Rate Calculator UK — Free, Instant, No Signup</title>
+    <title>Freelance Rate Calculator UK — Hourly &amp; Day Rates | Free</title>
     <meta
       name="description"
-      content="Free freelance hourly rate calculator for UK freelancers. Enter your salary target, expenses and billable hours — get your hourly, daily and weekly rate instantly. No signup required."
+      content="Free UK freelance rate calculator — work out hourly, day and weekly rates from your income goal, expenses and billable hours. No signup; runs in your browser."
     />
     <meta
       name="keywords"
-      content="freelance rate calculator, hourly rate calculator, freelance pricing guide, freelance business expenses, billable hours calculator, free no login freelance rate calculator, calculate hourly rate from annual salary goal, freelance rate calculator for digital marketers, freelance rate calculator for web developers, how to raise freelance rates, hourly vs project based pricing"
+      content="freelance rate calculator uk, freelance hourly rate calculator uk, hourly rate calculator, freelance pricing calculator, freelance business expenses, billable hours calculator, UK freelancer rates, calculate hourly rate from salary goal"
     />
     <link rel="canonical" href="https://freelanceratecalculator.net/" />
 
@@ -24,7 +24,7 @@
     />
     <meta
       property="og:description"
-      content="Free freelance hourly rate calculator for UK freelancers. Enter your salary target, expenses and billable hours — get your rate instantly. No signup required."
+      content="Free UK freelance rate calculator — hourly, day and weekly rates from your income goal and billable hours. No signup required."
     />
     <meta
       property="og:image"
@@ -36,11 +36,11 @@
     <meta property="twitter:url" content="https://freelanceratecalculator.net/" />
     <meta
       property="twitter:title"
-      content="Freelance Hourly Rate Calculator UK — Free, Instant, No Signup"
+      content="Freelance Rate Calculator UK — Hourly &amp; Day Rates | Free"
     />
     <meta
       property="twitter:description"
-      content="Free freelance hourly rate calculator for UK freelancers. Enter your salary target, expenses and billable hours — get your rate instantly. No signup required."
+      content="Free UK freelance rate calculator — hourly, day and weekly rates from your income goal and billable hours. No signup required."
     />
     <meta
       property="twitter:image"
@@ -52,7 +52,8 @@
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Freelance Hourly Rate Calculator UK",
+        "name": "Freelance Rate Calculator UK",
+        "description": "UK freelance rate calculator for hourly, daily and weekly rates.",
         "url": "https://freelanceratecalculator.net/"
       }
     </script>
@@ -62,7 +63,7 @@
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Freelance Hourly Rate Calculator UK",
+        "name": "Freelance Rate Calculator UK",
         "operatingSystem": "Web",
         "applicationCategory": "BusinessApplication",
         "offers": {
@@ -70,7 +71,7 @@
           "price": "0",
           "priceCurrency": "GBP"
         },
-        "description": "A comprehensive tool for freelancers to calculate their ideal hourly rate based on salary goals, expenses, and billable time."
+        "description": "UK-focused freelance rate calculator: hourly, day and weekly rates from salary goals, expenses and billable hours."
       }
     </script>
 
@@ -183,7 +184,7 @@
           class="flex items-center space-x-2 text-indigo-600 dark:text-indigo-400"
         >
           <i data-lucide="calculator" class="w-6 h-6"></i>
-          <h1 class="text-xl font-bold">Freelance Hourly Rate Calculator</h1>
+          <h1 class="text-xl font-bold">UK Freelance Rate Calculator</h1>
         </div>
         <div class="flex items-center space-x-4">
           <button
@@ -195,6 +196,8 @@
             <i id="theme-icon-moon" data-lucide="moon" class="w-5 h-5"></i>
           </button>
           <button
+            id="btn-print-report"
+            type="button"
             onclick="window.print()"
             class="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
           >
@@ -209,7 +212,10 @@
     <main class="max-w-4xl mx-auto px-4 py-8">
       <!-- Hero: differentiator vs spreadsheet/download competitors -->
       <p class="text-center text-gray-600 dark:text-gray-400 text-sm mb-6 print-hidden">
-        No download, no signup. Calculate instantly — your data never leaves your browser.
+        No download, no signup — this freelance rate calculator runs entirely in your browser (UK-focused defaults; optional USD/EUR).
+      </p>
+      <p class="text-center text-gray-700 dark:text-gray-300 text-sm mb-8 max-w-2xl mx-auto print-hidden leading-relaxed">
+        Enter your salary goal, expenses and billable hours to see your minimum <strong class="font-semibold text-gray-900 dark:text-gray-100">hourly rate</strong>, plus day and weekly equivalents — free <strong class="font-semibold text-gray-900 dark:text-gray-100">UK freelance rate calculator</strong> with instant results.
       </p>
 
       <!-- Print Header -->
@@ -1006,6 +1012,36 @@
 
       themeToggle.addEventListener("click", toggleTheme);
 
+      /** GA4 engagement (optional — safe if gtag missing) */
+      function gaEvent(name, params) {
+        if (typeof gtag === "function") {
+          gtag("event", name, params || {});
+        }
+      }
+
+      let calcInputTimer = null;
+      function trackCalculatorInteraction() {
+        window.clearTimeout(calcInputTimer);
+        calcInputTimer = window.setTimeout(() => {
+          gaEvent("rate_calc_input", { currency: currentCurrency });
+        }, 600);
+      }
+
+      const printBtn = document.getElementById("btn-print-report");
+      if (printBtn) {
+        printBtn.addEventListener("click", () =>
+          gaEvent("rate_calc_print", { method: "browser_print" })
+        );
+      }
+
+      themeToggle.addEventListener("click", () =>
+        gaEvent("theme_toggle", {
+          theme: document.documentElement.classList.contains("dark")
+            ? "dark"
+            : "light",
+        })
+      );
+
       // Calculation Logic
       function calculate() {
         const salary = parseFloat(annualSalaryInput.value) || 0;
@@ -1045,6 +1081,7 @@
       if (currencySelect) {
         currencySelect.addEventListener("change", () => {
           currentCurrency = currencySelect.value;
+          gaEvent("rate_calc_currency", { currency: currentCurrency });
           updateCurrencySymbols();
           calculate();
         });
@@ -1056,7 +1093,10 @@
         weeklyHoursInput,
         vacationWeeksInput,
       ].forEach((input) => {
-        input.addEventListener("input", calculate);
+        input.addEventListener("input", () => {
+          trackCalculatorInteraction();
+          calculate();
+        });
       });
 
       // Initial Calculation
