@@ -6,7 +6,7 @@ This site helps freelancers calculate a sustainable hourly rate, understand UK m
 
 ## Primary tools
 
-- [Freelance Rate Calculator UK](https://freelanceratecalculator.net/) — main calculator: income goal + expenses + hours → minimum hourly / day / weekly rate
+- [UK Freelance Rate & Hourly Calculator](https://freelanceratecalculator.net/) — pricing + hourly rate from income goal, expenses & hours; print/PDF via browser
 - [UK Freelance Tax Calculator 2026/27](https://freelanceratecalculator.net/tools/uk-freelance-tax-calculator/) — income tax + Class 4 NI, Scottish rates, student loan, pension
 - [IR35 Take-Home Calculator](https://freelanceratecalculator.net/blog/ir35-and-freelance-rates/) — inside vs outside IR35 comparison with rate uplift guide
 - [Tools index](https://freelanceratecalculator.net/tools/)
