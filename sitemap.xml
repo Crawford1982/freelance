@@ -108,6 +108,32 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Sprint landing pages -->
+  <url>
+    <loc>https://freelanceratecalculator.net/tools/uk-freelance-day-rate-calculator/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/tools/freelance-hourly-rate-calculator-uk/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/tools/contractor-day-rate-calculator-uk/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://freelanceratecalculator.net/blog/freelance-consultant-day-rate-uk/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Privacy -->
   <url>
     <loc>https://freelanceratecalculator.net/privacy.html</loc>
