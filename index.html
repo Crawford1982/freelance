@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="favicon.png" />
-    <title>Freelance Rate Calculator UK — Hourly, Day Rate & Pricing Tool</title>
+    <title>UK Freelance Day Rate Calculator — Work Out Your Take-Home Pay</title>
     <meta
       name="description"
-      content="Free UK freelance rate calculator for hourly rates, day rates and project pricing. Work backwards from income goals, costs, tax buffer and realistic billable time."
+      content="Calculate what day rate you need as a UK freelancer or contractor. Enter your target income, costs and billable days to get hourly, daily and weekly rates you can actually live on."
     />
     <meta
       name="keywords"
@@ -20,11 +20,11 @@
     <meta property="og:url" content="https://freelanceratecalculator.net/" />
     <meta
       property="og:title"
-      content="UK Freelance Rate &amp; Hourly Calculator | Free Pricing Tool"
+      content="UK Freelance Day Rate Calculator — Work Out Your Take-Home Pay"
     />
     <meta
       property="og:description"
-      content="Free UK freelance rate calculator for hourly rates, day rates and weekly pricing. No signup."
+      content="Calculate what day rate you need as a UK freelancer. Enter target income, costs and billable days. Free, instant, no signup."
     />
     <meta
       property="og:image"
@@ -36,11 +36,11 @@
     <meta property="twitter:url" content="https://freelanceratecalculator.net/" />
     <meta
       property="twitter:title"
-      content="UK Freelance Rate &amp; Hourly Calculator | Free Pricing Tool"
+      content="UK Freelance Day Rate Calculator — Work Out Your Take-Home Pay"
     />
     <meta
       property="twitter:description"
-      content="Free UK freelance and hourly rate calculator. Day and weekly pricing from your income goal. No signup."
+      content="Calculate what day rate you need as a UK freelancer. Enter target income, costs and billable days. Free, no signup."
     />
     <meta
       property="twitter:image"
@@ -253,7 +253,7 @@
           class="flex items-center space-x-2 text-indigo-600 dark:text-indigo-400"
         >
           <i data-lucide="calculator" class="w-6 h-6"></i>
-          <h1 class="text-xl font-bold">UK Freelance Rate &amp; Hourly Calculator</h1>
+          <h1 class="text-xl font-bold">UK Freelance Day Rate Calculator</h1>
         </div>
         <div class="flex items-center space-x-4">
           <button
@@ -271,7 +271,7 @@
             class="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
           >
             <i data-lucide="printer" class="w-4 h-4"></i>
-            <span>Print Report</span>
+            <span>Save as PDF</span>
           </button>
         </div>
       </div>
@@ -281,10 +281,10 @@
     <main class="max-w-4xl mx-auto px-4 py-8">
       <!-- Hero: differentiator vs spreadsheet/download competitors -->
       <p class="text-center text-gray-600 dark:text-gray-400 text-sm mb-6 print-hidden">
-        No app download, no signup — a <strong class="text-gray-700 dark:text-gray-300">freelance pricing calculator</strong> and <strong class="text-gray-700 dark:text-gray-300">freelance hourly rate calculator</strong> in one, running in your browser (UK defaults; £/USD/€).
+        No app download, no signup — a <strong class="text-gray-700 dark:text-gray-300">UK freelance day rate calculator</strong> and <strong class="text-gray-700 dark:text-gray-300">take-home pay planner</strong> in one, running in your browser (£/USD/€).
       </p>
       <p class="text-center text-gray-700 dark:text-gray-300 text-sm mb-8 max-w-2xl mx-auto print-hidden leading-relaxed">
-        <strong class="font-semibold text-gray-900 dark:text-gray-100">Calculate your freelance rate</strong> from your salary goal, expenses and billable hours — minimum <strong class="font-semibold text-gray-900 dark:text-gray-100">hourly</strong>, <strong class="font-semibold text-gray-900 dark:text-gray-100">day</strong> and <strong class="font-semibold text-gray-900 dark:text-gray-100">weekly</strong> numbers. The same tool people search for as a <strong class="font-semibold text-gray-900 dark:text-gray-100">freelance rate calculator (UK)</strong> — free, instant, private.
+        <strong class="font-semibold text-gray-900 dark:text-gray-100">Work out what you actually need to charge</strong> from your target salary, business costs and realistic billable days — get your minimum <strong class="font-semibold text-gray-900 dark:text-gray-100">hourly</strong>, <strong class="font-semibold text-gray-900 dark:text-gray-100">day</strong> and <strong class="font-semibold text-gray-900 dark:text-gray-100">weekly</strong> rates. Free, instant, private. UK defaults.
       </p>
 
       <!-- Print Header -->
@@ -448,6 +448,18 @@
                 <span class="text-indigo-100">Weeks Working</span>
                 <span class="font-semibold" id="totalWeeksResult">0 wks</span>
               </div>
+            </div>
+            
+            <div class="mt-6 pt-6 border-t border-indigo-500/50">
+              <button
+                type="button"
+                onclick="window.print()"
+                class="w-full flex items-center justify-center space-x-2 bg-white text-indigo-600 hover:bg-indigo-50 px-4 py-3 rounded-lg transition-colors text-sm font-bold shadow-sm"
+              >
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Save Your Results as PDF</span>
+              </button>
+              <p class="text-xs text-indigo-200 text-center mt-2">Free — saves locally, no account needed</p>
             </div>
           </div>
         </div>
